@@ -9,14 +9,31 @@ body{
 
 .content {
     padding: 1rem;
-    background-color: #fff;
-    height: 100vh;
+    background-color: rgba(28, 38, 45, 0.24);
     width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
 }
 
-
-.content h1 {
+.contentDark{
+    padding: 1rem;
+    background-color:#363636;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.titleBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
     margin: 0;
+
+}
+.poketitle {
+    width: 300px;
 }
 
 @media(min-width:992px){
