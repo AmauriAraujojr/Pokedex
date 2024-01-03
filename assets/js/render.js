@@ -46,6 +46,8 @@ export const renderPokemon = async (limit, offset) => {
   const response = await getPokemons(limit, offset);
 
   const listPokemon = response;
+  console.log(listPokemon)
+
 
   listPokemon.map((pokemon) => {
     const pokemonLi = createPokemon(pokemon);
