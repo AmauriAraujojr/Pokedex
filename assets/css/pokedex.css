@@ -78,7 +78,7 @@
     display: grid;
     grid-template-columns: 1fr;
 
-    gap:5px;
+    gap: 5px;
 
 
 }
@@ -116,14 +116,15 @@
     opacity: .3;
 }
 
-.pokeballImg{
-   width: 40px;
+.pokeballImg {
+    width: 40px;
     position: absolute;
-    top:-32px;
-    right:-20px;
+    top: -32px;
+    right: -20px;
     border-radius: 50px;
 }
-.pokeballImg:hover{
+
+.pokeballImg:hover {
     filter: brightness(1.3);
     cursor: pointer;
     background-color: red;
@@ -186,6 +187,11 @@
 
     #pokemonList {
         grid-template-columns: 1fr 1fr;
+
+    }
+
+    .titleBox {
+        flex-direction: row;
 
     }
 }

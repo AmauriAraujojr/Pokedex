@@ -3,9 +3,51 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #f6f8fc;
 }
+
+.darkMode {
+    border-radius: 30px;
+    background-color: #363636;
+    border: 1px solid #363636;
+    width: 75px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.ligthMode {
+    border-radius: 30px;
+    background-color: silver;
+    border: 1px solid silver;
+    width: 75px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+
+}
+
+.cicle {
+    background-color: #f6f8fc;
+    width: 50%;
+    height: 90%;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.icon {
+    max-width: 80%;
+}
+
 
 .content {
     padding: 1rem;
@@ -13,37 +55,41 @@ body{
     width: 100vw;
     display: flex;
     flex-direction: column;
-    gap:20px;
+    gap: 20px;
 }
 
-.contentDark{
+.contentDark {
     padding: 1rem;
-    background-color:#363636;
+    background-color: #363636;
     width: 100vw;
     display: flex;
     flex-direction: column;
-    gap:20px;
+    gap: 20px;
 }
-.titleBox{
+
+.titleBox {
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 100%;
     margin: 0;
+    flex-direction: column;
 
 }
+
 .poketitle {
     width: 300px;
 }
 
-@media(min-width:992px){
-    .content{
+@media(min-width:992px) {
+    .content {
         max-width: 992px;
         height: auto;
         margin: 1rem auto;
         border-radius: 1rem;
     }
-    .pokemonList{
+
+    .pokemonList {
         grid-template-columns: 1fr 1fr 1fr 1fr;
 
     }
