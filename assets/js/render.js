@@ -22,7 +22,7 @@ const createPokemon = (pokemon) => {
   pokemonNumber.innerText = `#${pokemon.number}`;
   pokemonImg.src = pokemon.photo;
   pokeballImg.src =
-    "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/57541cc3-da0f-40dc-94ec-49b954d5805a/d93bs8z-cc196bbd-da41-4167-9fec-798ae39fa542.png/v1/fill/w_894,h_894/pokeball_logo_by_pedronex_d93bs8z-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAwMCIsInBhdGgiOiJcL2ZcLzU3NTQxY2MzLWRhMGYtNDBkYy05NGVjLTQ5Yjk1NGQ1ODA1YVwvZDkzYnM4ei1jYzE5NmJiZC1kYTQxLTQxNjctOWZlYy03OThhZTM5ZmE1NDIucG5nIiwid2lkdGgiOiI8PTEwMDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.X38yrINPG4Dj5tIRHsUm5tGhxdvm77QMyBeOREfr6CY";
+  "../poke1.png"
 
   pokemonCard.className = `pokemon ${pokemon.type}`;
 
