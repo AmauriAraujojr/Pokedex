@@ -1,4 +1,5 @@
 import { getPokemons } from "./requisitions.js";
+import { openModal } from "./modal.js";
 
 const createPokemon = (pokemon) => {
   const pokemonCard = document.createElement("li");
@@ -31,6 +32,7 @@ const createPokemon = (pokemon) => {
   pokemonTypes.className = "pokemonTypes";
   pokemonImg.className = "pokemonImg";
   pokeballImg.className = "pokeballImg";
+  pokeballImg.dataset.cardId = pokemon.number;
   pokemonTitleContainer.className = "pokemonTitleContainer";
 
   pokemonTitleContainer.append(pokemonName, pokemonNumber, pokeballImg);
@@ -46,13 +48,13 @@ export const renderPokemon = async (limit, offset) => {
   const response = await getPokemons(limit, offset);
 
   const listPokemon = response;
-  console.log(listPokemon)
-
+  console.log(listPokemon);
 
   listPokemon.map((pokemon) => {
     const pokemonLi = createPokemon(pokemon);
     ol.appendChild(pokemonLi);
   });
+  openModal(listPokemon);
 };
 
 const loadMorePokemon = () => {
