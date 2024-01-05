@@ -21,8 +21,7 @@ const createPokemon = (pokemon) => {
   pokemonName.innerText = `${pokemon.name}`;
   pokemonNumber.innerText = `#${pokemon.number}`;
   pokemonImg.src = pokemon.photo;
-  pokeballImg.src =
-  "../poke1.png"
+  pokeballImg.src = "../poke1.png";
 
   pokemonCard.className = `pokemon ${pokemon.type}`;
 
@@ -48,7 +47,6 @@ export const renderPokemon = async (limit, offset) => {
   const response = await getPokemons(limit, offset);
 
   const listPokemon = response;
-  console.log(listPokemon);
 
   listPokemon.map((pokemon) => {
     const pokemonLi = createPokemon(pokemon);
@@ -57,11 +55,57 @@ export const renderPokemon = async (limit, offset) => {
   openModal(listPokemon);
 };
 
+const filteredPokemons = () => {
+  const regions = [
+    "Kanto",
+    "Johto",
+    "Hoenn",
+    "Sinnoh",
+    "Unova",
+    "Kalos",
+    "Aiola",
+    "Galar",
+  ];
+
+  const box = document.querySelector(".navBar");
+
+  const select = document.createElement("select");
+
+  regions.map((region) => {
+    const options = document.createElement("option");
+    options.innerText = region;
+    options.classList.add("options");
+
+    if (options.innerText == "Kanto") {
+      options.value = 0;
+    }
+    if (options.innerText == "Johto") {
+      options.value = 151;
+    }
+
+    select.append(options);
+  });
+  select.addEventListener("change", () => {
+    const limit = 5;
+    renderPokemon(limit, select.value);
+  });
+
+  box.append(select);
+};
+filteredPokemons();
+
+
 const loadMorePokemon = () => {
   const loadButton = document.querySelector("#loadMoreButton");
-
-  let limit = 3;
   let offset = 0;
+
+  const select = document.querySelector("select");
+    offset=select.value
+    
+    console.log(offset)
+  
+  
+  let limit = 3;
   loadButton.addEventListener("click", () => {
     limit += 3;
     renderPokemon(limit, offset);
@@ -88,3 +132,4 @@ const darkMode = () => {
 };
 
 darkMode();
+

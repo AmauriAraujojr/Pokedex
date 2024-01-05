@@ -179,41 +179,51 @@
     cursor: pointer;
 }
 
-dialog{
+dialog {
     width: 400px;
-    max-width:100%;
+    max-width: 100%;
     margin: 0 auto;
     border-radius: 0.5rem;
     border: none;
     background-color: rgba(28, 38, 45, 0.24);
     margin-top: 100px;
+    overflow-x: hidden;
 
 }
-.modal__container{
-    width:100%;
+
+.modal__container {
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     padding: 0;
 }
-.modal__box{
+
+.modal__box {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     padding: 20px;
+    background-image: url("../../fundo.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 
 }
-.modal__box>img{
+
+.modal__box>img {
     max-width: 60%;
 }
-.boxtypes{
+
+.boxtypes {
     display: flex;
     align-items: center;
-    gap:25px;
+    justify-content: space-between;
     width: 100%;
 }
-.pokemonTypesModal{
+
+.pokemonTypesModal {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -231,16 +241,18 @@ dialog{
     text-align: center;
     width: 70px;
 }
+
 .pokemonNameModal {
     color: #fff;
     font-size: 1.8rem;
     text-transform: capitalize;
 }
-.pokemonStatus{
+
+.pokemonStatus {
     list-style: none;
     display: flex;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     column-gap: 20px;
     row-gap: 10px;
     width: 100%;
@@ -248,16 +260,23 @@ dialog{
     margin: 0;
 
 }
-.pokemonState{
-    color:#fff;
+
+.pokemonState {
+    color: #fff;
     font-weight: 700;
+    text-transform: uppercase;
+    filter: brightness(.8);
+    padding: 8px;
+
 
 }
-.close{
-    width: 50px;
+
+.close {
+    width: 90px;
     position: absolute;
-    top:-10px;
-    right: 0px;
+    top: -5px;
+    right: -20px;
+    cursor: pointer;
 }
 
 
@@ -273,7 +292,7 @@ dialog{
         flex-direction: row;
 
     }
-   
+
 }
 
 @media(min-width:642px) {
