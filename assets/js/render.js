@@ -65,6 +65,7 @@ const filteredPokemons = () => {
     "Kalos",
     "Aiola",
     "Galar",
+    "Paldea",
   ];
 
   const box = document.querySelector(".navBar");
@@ -82,11 +83,34 @@ const filteredPokemons = () => {
     if (options.innerText == "Johto") {
       options.value = 151;
     }
+    if (options.innerText == "Hoenn") {
+      options.value = 251;
+    }
+    if (options.innerText == "Sinnoh") {
+      options.value = 386;
+    }
+
+    if (options.innerText == "Unova") {
+      options.value = 494;
+    }
+    if (options.innerText == "Kalos") {
+      options.value = 649;
+    }
+
+    if (options.innerText == "Aiola") {
+      options.value = 721;
+    }
+    if (options.innerText == "Galar") {
+      options.value = 809;
+    }
+    if (options.innerText == "Paldea") {
+      options.value = 905;
+    }
 
     select.append(options);
   });
   select.addEventListener("change", () => {
-    const limit = 5;
+    const limit = 9;
     renderPokemon(limit, select.value);
   });
 
@@ -94,21 +118,17 @@ const filteredPokemons = () => {
 };
 filteredPokemons();
 
-
 const loadMorePokemon = () => {
   const loadButton = document.querySelector("#loadMoreButton");
-  let offset = 0;
 
   const select = document.querySelector("select");
-    offset=select.value
-    
-    console.log(offset)
-  
-  
-  let limit = 3;
+
+  console.log(select.value);
+
+  let limit = 9;
   loadButton.addEventListener("click", () => {
     limit += 3;
-    renderPokemon(limit, offset);
+    renderPokemon(limit, select.value);
   });
 };
 
@@ -132,4 +152,3 @@ const darkMode = () => {
 };
 
 darkMode();
-

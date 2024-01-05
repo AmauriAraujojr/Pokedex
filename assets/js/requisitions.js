@@ -1,5 +1,6 @@
 const convertPokeApiDetailToPokemon = (pokeDetail) => {
   const pokemon = {};
+  console.log(pokeDetail);
   pokemon.number = pokeDetail.id;
   pokemon.name = pokeDetail.name;
 
@@ -18,7 +19,7 @@ const convertPokeApiDetailToPokemon = (pokeDetail) => {
 
   pokemon.status = status;
 
-  pokemon.photo = pokeDetail.sprites.other.dream_world.front_default;
+  pokemon.photo = pokeDetail.sprites.front_default;
 
   return pokemon;
 };
