@@ -41,19 +41,43 @@ const createPokemon = (pokemon) => {
   return pokemonCard;
 };
 
+
 export const renderPokemon = async (limit, offset) => {
   const ol = document.querySelector("#pokemonList");
   ol.innerHTML = "";
   const response = await getPokemons(limit, offset);
-
+  
   const listPokemon = response;
-
+  
   listPokemon.map((pokemon) => {
     const pokemonLi = createPokemon(pokemon);
     ol.appendChild(pokemonLi);
   });
   openModal(listPokemon);
+  findPokemon(listPokemon)
 };
+
+const findPokemon=(array)=>{
+
+
+  const input =document.querySelector(".findPokemonInput")
+
+
+  input.addEventListener('input', ()=>{
+    const pokemonEncounter= array.filter((pokemon)=>{
+      return pokemon.name.toLowerCase().includes(input.value.toLowerCase())
+    })
+
+    let offset=pokemonEncounter[0].number-1
+    let limit=pokemonEncounter.length
+    renderPokemon(limit,offset)
+  
+
+
+    
+  })
+}
+
 
 const filteredPokemons = () => {
   const regions = [
@@ -123,7 +147,6 @@ const loadMorePokemon = () => {
 
   const select = document.querySelector("select");
 
-  console.log(select.value);
 
   let limit = 9;
   loadButton.addEventListener("click", () => {
