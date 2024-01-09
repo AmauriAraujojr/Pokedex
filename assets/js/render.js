@@ -41,43 +41,39 @@ const createPokemon = (pokemon) => {
   return pokemonCard;
 };
 
-
 export const renderPokemon = async (limit, offset) => {
   const ol = document.querySelector("#pokemonList");
   ol.innerHTML = "";
   const response = await getPokemons(limit, offset);
-  
+
   const listPokemon = response;
-  
+  // console.log(listPokemon)
+  findPokemon(listPokemon);
+
   listPokemon.map((pokemon) => {
     const pokemonLi = createPokemon(pokemon);
     ol.appendChild(pokemonLi);
   });
   openModal(listPokemon);
-  findPokemon(listPokemon)
 };
 
-const findPokemon=(array)=>{
+const findPokemon = (array) => {
+  const ol = document.querySelector("#pokemonList");
+  ol.innerHTML = "";
 
+  const input = document.querySelector(".findPokemonInput");
+  const button = document.querySelector(".sarch");
 
-  const input =document.querySelector(".findPokemonInput")
-
-
-  input.addEventListener('input', ()=>{
-    const pokemonEncounter= array.filter((pokemon)=>{
-      return pokemon.name.toLowerCase().includes(input.value.toLowerCase())
-    })
-
-    let offset=pokemonEncounter[0].number-1
-    let limit=pokemonEncounter.length
-    renderPokemon(limit,offset)
-  
-
-
-    
-  })
-}
-
+  button.addEventListener("click", () => {
+    const pokemonEncounter = array.filter((pokemon) => {
+      return pokemon.name.toLowerCase().includes(input.value.toLowerCase());
+    });
+    console.log(pokemonEncounter);
+    const limit = pokemonEncounter.length;
+    const offset = pokemonEncounter[0].number - 1;
+    renderPokemon(limit, offset);
+  });
+};
 
 const filteredPokemons = () => {
   const regions = [
@@ -147,7 +143,6 @@ const loadMorePokemon = () => {
 
   const select = document.querySelector("select");
 
-
   let limit = 9;
   loadButton.addEventListener("click", () => {
     limit += 3;
@@ -175,3 +170,12 @@ const darkMode = () => {
 };
 
 darkMode();
+
+const refresh=()=>{
+  const button= document.querySelector(".refresh")
+
+  button.addEventListener("click",()=>{
+    window.location.reload()
+  })
+}
+refresh()

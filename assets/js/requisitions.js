@@ -2,7 +2,6 @@ const convertPokeApiDetailToPokemon = (pokeDetail) => {
   const pokemon = {};
   pokemon.number = pokeDetail.id;
   pokemon.name = pokeDetail.name;
-
   const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name);
   const [type] = types;
 
@@ -18,7 +17,7 @@ const convertPokeApiDetailToPokemon = (pokeDetail) => {
 
   pokemon.status = status;
 
-  pokemon.photo = pokeDetail.sprites.front_default;
+  pokemon.photo = pokeDetail.sprites.other.home.front_default;
 
   return pokemon;
 };
