@@ -91,6 +91,11 @@ const filteredPokemons = () => {
   const box = document.querySelector(".navBar");
 
   const select = document.createElement("select");
+  const option = document.createElement("option");
+  option.classList.add("option");
+  option.innerText = "Find for region";
+
+  select.appendChild(option);
 
   regions.map((region) => {
     const options = document.createElement("option");
@@ -171,11 +176,11 @@ const darkMode = () => {
 
 darkMode();
 
-const refresh=()=>{
-  const button= document.querySelector(".refresh")
+const refresh = () => {
+  const button = document.querySelector(".refresh");
 
-  button.addEventListener("click",()=>{
-    window.location.reload()
-  })
-}
-refresh()
+  button.addEventListener("click", () => {
+    window.location.reload();
+  });
+};
+refresh();
